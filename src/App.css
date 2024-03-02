@@ -58,7 +58,7 @@ button{
   text-decoration: line-through;
 }
 
-/* .task2{
+.task2{
   border-radius: 5px;
   width: 40px;
   height: 30px;
@@ -67,4 +67,4 @@ button{
   justify-content: center;
   align-items: center;
   background-color: rgb(17, 54, 221);
-} */
+}
