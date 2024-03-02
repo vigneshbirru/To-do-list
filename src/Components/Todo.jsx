@@ -1,8 +1,8 @@
 import React,{ useState } from 'react'
-import './App.css'
-import ShowTodo from './Components/ShowTodo';
+import './Todo.css'
+import ShowTodo from './ShowTodo';
 
-const App = () => {
+const Todo = () => {
     const [task,setTask]  =  useState("");
     const [data,setData]  =  useState([]);
     
@@ -27,16 +27,15 @@ const App = () => {
     return (
     <div className='container'>
         <div className="outter-div">
-            <div className="main-heading">
+            <div className="outter">
                 <h1>Todo App</h1>
             </div>
             <form onSubmit={submitHandler}>
-                <div className="todo" >
+                <div className="todo">
                     <input type="text" className='input-value' value={task} onChange={ChangeHandler}/>
                     <button type='submit'>Add todo</button>
                 </div>
             </form>
-            <div className="taskdata">
             {
                 data.map((value,index)=>{
                     return <ShowTodo 
@@ -47,10 +46,9 @@ const App = () => {
                     />
                 })
             }
-            </div>
         </div>
     </div>
   )
 
 }
-export default App
+export default Todo
