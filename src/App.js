@@ -1,6 +1,6 @@
 import React,{ useState } from 'react'
 import './App.css'
-import ShowTodo from './Components/ShowTodo';
+import ShowTodo from './ShowTodo';
 
 const App = () => {
     const [task,setTask]  =  useState("");
@@ -19,7 +19,7 @@ const App = () => {
     
     const deleteItem=(i)=>{
         const finalData = data.filter((current,index)=>{
-            return index != i;
+            return index !== i;
         })
         setData(finalData)
     }
@@ -28,15 +28,14 @@ const App = () => {
     <div className='container'>
         <div className="outter-div">
             <div className="main-heading">
-                <h1>Todo App</h1>
+                <h1>To do List</h1>
             </div>
             <form onSubmit={submitHandler}>
                 <div className="todo" >
                     <input type="text" className='input-value' value={task} onChange={ChangeHandler}/>
                     <button type='submit'>Add todo</button>
                 </div>
-            </form>
-            <div className="taskdata">
+                </form>
             {
                 data.map((value,index)=>{
                     return <ShowTodo 
@@ -47,10 +46,10 @@ const App = () => {
                     />
                 })
             }
-            </div>
+         
         </div>
     </div>
-  )
+)
 
 }
 export default App
